@@ -8,10 +8,20 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'MainController'
 		})
 
-		.when('/page2', {
-			templateUrl: 'views/page2.html',
-			controller: 'Page2Controller'
+		// login page
+		.when('/login', {
+			templateUrl: 'views/login.html',
+			controller: 'LoginController'
+		})
+
+		// registration page
+		.when('/register', {
+			templateUrl: 'views/register.html',
+			controller: 'RegistrationController'
 		});
+
+		// user profile page
+		// TODO:
 
 	$locationProvider.html5Mode(true);
 
