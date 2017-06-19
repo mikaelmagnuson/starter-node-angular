@@ -1,6 +1,11 @@
 body {
-    background-color: lightgrey;
-    padding-top: 30px;
+    /*background-color: lightgrey;*/
+    /*padding-top: 30px;*/
+}
+
+i.nav-link {
+    font-size: 36px !important;
+    padding: 1rem !important;
 }
 
 .login-container {
@@ -13,6 +18,32 @@ body {
 
 .logo {
     max-width: 100%;
+}
+
+.nav-bar-notification-item {
+    position: relative;
+}
+.nav-bar-notification-item > i {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.nav-bar-notification-item > img {
+    position: absolute;
+    top: 50px;
+    left: 12px;
+}
+
+.navbar {
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.nav-link.btn-primary {
+    color: white !important;
+    /*font-weight: 300;*/
 }
 
 .small-text {

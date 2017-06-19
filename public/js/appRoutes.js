@@ -8,16 +8,22 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 			controller: 'MainController'
 		})
 
-		// login page
-		.when('/login', {
-			templateUrl: 'views/login.html',
-			controller: 'LoginController'
-		})
+        // login and registration page
+        .when('/login', {
+            templateUrl: 'views/login.html',
+            controller: 'AuthController'
+        })
 
-		// registration page
-		.when('/register', {
-			templateUrl: 'views/register.html',
-			controller: 'RegistrationController'
+        // user home page
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'AuthController'
+        })
+
+        // user home page
+		.when('/:id', {
+			templateUrl: 'views/user.html',
+			controller: 'UserController'
 		});
 
 		// user profile page

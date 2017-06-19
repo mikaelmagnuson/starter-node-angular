@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Starter Node and Angular</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+    <!-- JS -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+
+    <!-- ANGULAR CUSTOM -->
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/AuthCtrl.js"></script>
+    <script src="js/controllers/UserCtrl.js"></script>
+    <script src="js/services/LoginService.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body ng-app="ExampleApp" ng-controller="AuthController">
+<div class="container">
+
+    <!--&lt;!&ndash; HEADER &ndash;&gt;-->
+    <!--<nav class="navbar navbar-inverse">-->
+    <!--<div class="navbar-header">-->
+    <!--<a class="navbar-brand" href="/">Base Line</a>-->
+    <!--</div>-->
+    <!--<ul class="nav navbar-nav">-->
+    <!--<li><a href="/login">Login</a></li>-->
+    <!--<li><a href="/register">Sign Up</a></li>-->
+    <!--</ul>-->
+    <!--</nav>-->
+
+    <!-- ANGULAR DYNAMIC CONTENT -->
+    <div class="container">
+        <div class="row">
+            <div class="hidden-sm-down col-md-3 col-lg-4"></div>
+            <div class="col-xs-12 col-md-6 col-lg-4 login-container">
+                <a href="#" ng-click="goToHomepage()">
+                    <img class="logo" src="img/logo.png">
+                </a>
+                <h4>{{ formText }}</h4>
+                <form>
+                    <div ng-if='registration' class="form-group row">
+                        <label for="name" class="col-3 col-form-label">Name</label>
+                        <div class="col-9">
+                            <input class="form-control" type="text" placeholder="Jane Doe" ng-model="$parent.fullName" id="name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email-input" class="col-3 col-form-label">Email</label>
+                        <div class="col-9">
+                            <input class="form-control" type="email" placeholder="janedoe@example.com"
+                                   ng-model="email" id="email-input">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="password-input" class="col-3 col-form-label">Password</label>
+                        <div class="col-9">
+                            <input class="form-control" type="password" ng-model="password" id="password-input">
+                        </div>
+                    </div>
+                    <button type="submit" ng-click="submitForm()" class="btn btn-primary">Submit</button>
+                </form>
+                <a href="#" ng-click="toggleRegister()" class="small-text">{{ linkText }}</a>
+            </div>
+            <div class="hidden-sm-down col-md-3 col-lg-4"></div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -6,6 +6,8 @@ lib-cov
 *.out
 *.pid
 *.gz
+*.idea
+*.DS_Store
 
 pids
 logs
@@ -15,3 +17,4 @@ npm-debug.log
 node_modules
 
 public/libs
+.idea/*

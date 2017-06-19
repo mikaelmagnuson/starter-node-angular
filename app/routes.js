@@ -1,3 +1,5 @@
+var userController = require('./controllers/userController');
+
 module.exports = function(app) {
 
 	// server routes ===========================================================
@@ -5,7 +7,7 @@ module.exports = function(app) {
     // authentication routes
 
     // sample api route
-    app.get('/api/nerds', function(req, res) {
+    app.get('/v1/nerds', function(req, res) {
         // use mongoose to get all nerds in the database
         Nerd.find(function(err, nerds) {
 
@@ -18,10 +20,24 @@ module.exports = function(app) {
         });
     });
 
+    app.post('/v1/user', function(req, res) {
+        console.log("Creating a new user");
+        userController.saveUser(req, res);
+    });
+
+    app.post('/v1/event', function(req, res) {
+        res.send('success!');
+    });
+
     // route to handle creating goes here (app.post)
     // route to handle delete goes here (app.delete)
 
     // frontend routes =========================================================
+    // route to login or register page
+    app.get('/login', function(req, res) {
+        res.sendfile('./public/account.html');
+    });
+
 	// route to handle all angular requests
 	app.get('*', function(req, res) {
 		res.sendfile('./public/index.html');
